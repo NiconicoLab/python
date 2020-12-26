@@ -2,11 +2,12 @@ import tkinter
 from tkinter import filedialog
 from tkinter import messagebox
 import os
+import sys
 
 #グローバル変数(参照ファイルのパス)
 fpath = '/'
 
-#参照釦がクリックされたら実行
+#参照釦が押下されたら実行
 def file_select():
     tkinter.messagebox.showinfo('タイトル','参照ファイルを選択してください')
     dir_path = os.path.dirname(os.path.abspath("__file__")) #ディレクトリの絶対パスを格納
@@ -18,38 +19,39 @@ def file_select():
     global fpath #グローバル変数であることを定義
     fpath = file_path
 
-#実行釦がクリックされたら実行
+#実行釦が押下されたら実行
 def file_conduct():
-    print("実行!!!")
-    root.destroy()
+    if fpath == '/': #参照ファイルが指定されていない場合
+        tkinter.messagebox.showinfo('タイトル','参照ファイルがありません')
+        sys.exit()
+    else:
+        root.destroy()
 
-#ウインドウの作成
-root = tkinter.Tk()
-root.title("Python GUI")
-root.geometry("420x240")
+if __name__ == '__main__':
+    #ウインドウの作成
+    root = tkinter.Tk()
+    root.title("Python GUI")
+    root.geometry("420x240")
 
-#入力欄の作成
-input_box = tkinter.Entry(width=40)
-input_box.place(x=10, y=100)
+    #入力欄の作成
+    input_box = tkinter.Entry(width=40)
+    input_box.place(x=10, y=100)
 
-#ラベルの作成
-input_label = tkinter.Label(text="ファイルパス")
-input_label.place(x=10, y=70)
+    #ラベルの作成
+    input_label = tkinter.Label(text="ファイルパス")
+    input_label.place(x=10, y=70)
 
-#ボタンの作成
-button = tkinter.Button(text="参照",command=file_select)
-button.place(x=10, y=50)
+    #ボタンの作成
+    button = tkinter.Button(text="参照",command=file_select)
+    button.place(x=10, y=50)
 
-button = tkinter.Button(text="実行",command=file_conduct)
-button.place(x=10, y=200)
+    button = tkinter.Button(text="実行",command=file_conduct)
+    button.place(x=10, y=200)
 
-#ウインドウの描画
-root.mainloop()
+    #ウインドウの描画
+    root.mainloop()
 
-#実行釦が押下された後に実行される
-if fpath == '/': #参照ファイルが指定されていない場合
-    print("file path error")
-else:
+    #実行釦が押下された後に正常時のみ実行される
     print(fpath)
 
-print("!!!end!!!")
+    print("!!!end!!!")
