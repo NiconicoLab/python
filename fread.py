@@ -6,6 +6,7 @@ import sys
 
 #グローバル変数(参照ファイルのパス)
 fpath = '/'
+freadflg = False
 
 #参照釦が押下されたら実行
 def file_select():
@@ -26,6 +27,8 @@ def file_conduct():
         tkinter.messagebox.showinfo('タイトル','参照ファイルがありません')
         sys.exit()
     else:
+        global freadflg
+        freadflg = True
         root.destroy()
 
 if __name__ == '__main__':
@@ -53,7 +56,7 @@ if __name__ == '__main__':
     root.mainloop()
 
     #pythonプログラムを閉じられた場合のガード処理
-    if os.access(fpath,os.R_OK) == False or fpath == '/':
+    if os.access(fpath,os.R_OK) == False or fpath == '/' or freadflg == False:
         print("guard process") #debug
         sys.exit()
 
