@@ -21,7 +21,8 @@ def file_select():
 
 #実行釦が押下されたら実行
 def file_conduct():
-    if fpath == '/': #参照ファイルが指定されていない場合
+    #ファイルが読み込み可能かどうかチェック
+    if os.access(fpath,os.R_OK) == False or fpath == '/':
         tkinter.messagebox.showinfo('タイトル','参照ファイルがありません')
         sys.exit()
     else:
@@ -31,25 +32,30 @@ if __name__ == '__main__':
     #ウインドウの作成
     root = tkinter.Tk()
     root.title("Python GUI")
-    root.geometry("420x240")
+    root.geometry("480x50")
 
     #入力欄の作成
     input_box = tkinter.Entry(width=40)
-    input_box.place(x=10, y=100)
+    input_box.place(x=5, y=10)
 
     #ラベルの作成
-    input_label = tkinter.Label(text="ファイルパス")
-    input_label.place(x=10, y=70)
+    #input_label = tkinter.Label(text="ファイルパス")
+    #input_label.place(x=10, y=0)
 
     #ボタンの作成
     button = tkinter.Button(text="参照",command=file_select)
-    button.place(x=10, y=50)
+    button.place(x=380, y=10)
 
     button = tkinter.Button(text="実行",command=file_conduct)
-    button.place(x=10, y=200)
+    button.place(x=420, y=10)
 
     #ウインドウの描画
     root.mainloop()
+
+    #pythonプログラムを閉じられた場合のガード処理
+    if os.access(fpath,os.R_OK) == False or fpath == '/':
+        print("guard process") #debug
+        sys.exit()
 
     #実行釦が押下された後に正常時のみ実行される
     print(fpath)
