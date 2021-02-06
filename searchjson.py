@@ -24,7 +24,14 @@ print('--- val from key---')
 print(jsn["No.3"])
 print(jsn["No.2"]["parameter1"])
 
-# jsonファイルのparameterのみ表示
+# jsonファイルのparameter2のみ表示
 print('--- key ---')
 for jsn_key in jsn:
     print(jsn[jsn_key]["parameter2"])
+
+# jsonファイルの入れ子構造の表示
+print('--- advance ---')
+print(jsn["No.4"]["parameter3"][0])
+print(jsn["No.4"]["parameter3"][1])
+print(jsn["No.5"]["parameter3"]["data"]["data1"][0])
+print(jsn["No.5"]["parameter3"]["data"]["data2"][1])
