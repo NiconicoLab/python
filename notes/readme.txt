@@ -15,3 +15,7 @@ start --- string.py ---
 end   --- string.py ---
 start --- sample.py ---
 end   --- sample.py ---
+
+ライブラリとして読み込まれた場合，__pycache__のディレクトリが生成される
+その中に，my_function_library.cpython-37.pycのように，
+何のプログラムがライブラリとして読み込まれたのかcacheでわかるようになっている
