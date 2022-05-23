@@ -21,7 +21,7 @@ if __name__ == '__main__':
   if len(args) == 2:
     fname = sys.argv[1]
     if -1!=fname.rfind('.json'): # *.jsonファイルか検索して，見つかった時
-      ctrlfile(sys.argv[1], sys.argv[1].replace('json','_tmp.txt'))  # 拡張子を変えたものを出力ファイル名にする
+      ctrlfile(sys.argv[1], sys.argv[1].replace('.json','_tmp.txt'))  # 拡張子を変えたものを出力ファイル名にする
     else:
       print('Not found json! This file in not json file.')
   else:
