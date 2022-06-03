@@ -25,3 +25,20 @@ print(str2, end=',')
 print(str8, end=',')
 print(str10, end=',')
 print(str16)
+
+'''
+文字列から指定文字数だけを数値への変換
+'''
+
+str = 'ABCD'
+s1   = str[0:1] # 開始1文字目のみ
+s2   = str[1:2] # 開始2文字目のみ
+s02 = str[0:2] # 開始2文字分のみ
+s22 = str[2:4] # 開始2文目から4文字目まで
+
+print('Cutout string')
+print(s1, end=',')
+print(s2, end=',')
+print(s02, end=',')
+print(s22)
+
