@@ -82,9 +82,8 @@ def write():
     # 色(背景色)を付ける
     fill = PatternFill(patternType='solid', fgColor='ffdead', bgColor='ffdead') #薄橙
     sheet.cell(row=12, column=2).fill = fill
-    fill = PatternFill(patternType='solid', bgColor='d9e5ff') #bgColor指定すると変わらず黒になってしまう
+    fill = PatternFill(patternType='solid', bgColor='d9e5ff') #bgColorのみ指定すると変わらず黒になってしまう
     sheet.cell(row=13, column=2).fill = fill
-    #の場合に色が変わらない...黒になったり，前景色と同じにならない
 
     # 保存
     wb.save("sample.xlsx")
