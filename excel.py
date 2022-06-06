@@ -56,7 +56,7 @@ def write():
     # 1行目をウィンドウ固定
     sheet.freeze_panes = 'A2'
 
-    # 色(背景色)を付ける
+    # 色(前景色)を付ける
     fill = PatternFill(patternType='solid', fgColor='d3d3d3') #灰色
     sheet.cell(row=1, column=2).fill = fill
     fill = PatternFill(patternType='solid', fgColor='ffffcc') #黄色
@@ -79,6 +79,12 @@ def write():
     sheet.cell(row=10, column=2).fill = fill
     fill = PatternFill(patternType='solid', fgColor='d9e5ff') #薄青
     sheet.cell(row=11, column=2).fill = fill
+    # 色(背景色)を付ける
+    fill = PatternFill(patternType='solid', fgColor='ffdead', bgColor='ffdead') #薄橙
+    sheet.cell(row=12, column=2).fill = fill
+    fill = PatternFill(patternType='solid', bgColor='d9e5ff') #bgColor指定すると変わらず黒になってしまう
+    sheet.cell(row=13, column=2).fill = fill
+    #の場合に色が変わらない...黒になったり，前景色と同じにならない
 
     # 保存
     wb.save("sample.xlsx")
