@@ -1,0 +1,27 @@
+{
+    "No.1":{
+        "parameter1": 100,
+        "parameter2": "01",
+        "parameter3": ["01", "A1", "03"]
+    },
+    "No.2":{
+        "parameter1": 5,
+        "parameter2": "1A",
+        "parameter3": ["11", "B1", "03"]
+    },
+    "No.3":{
+        "parameter1": 43,
+        "parameter2": "E9",
+        "parameter3": ["21", "C1", "03"]
+    },
+    "No.4":{
+        "parameter1": 0,
+        "parameter2": "A2",
+        "parameter3": ["31", "D1", "03"]
+    },
+    "No.5":{
+        "parameter1": 50,
+        "parameter2": "93",
+        "parameter3": ["41", "E1", "03"]
+    }
+}
