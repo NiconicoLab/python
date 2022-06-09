@@ -1,4 +1,5 @@
 import openpyxl
+from openpyxl.styles import PatternFill
 
 def write():
     #新規作成
@@ -48,6 +49,36 @@ def write():
 
     # Excelの関数も使用可能
     sheet.cell(row=5, column=1).value = '=SUM(A1:A4)'
+
+    # オートフィルタ
+    sheet.auto_filter.ref = 'A1:H1'
+
+    # 1行目をウィンドウ固定
+    sheet.freeze_panes = 'A2'
+
+    # 色(背景色)を付ける
+    fill = PatternFill(patternType='solid', fgColor='d3d3d3') #灰色
+    sheet.cell(row=1, column=2).fill = fill
+    fill = PatternFill(patternType='solid', fgColor='ffffcc') #黄色
+    sheet.cell(row=2, column=2).fill = fill
+    fill = PatternFill(patternType='solid', fgColor='ccffcc') #薄緑
+    sheet.cell(row=3, column=2).fill = fill
+    fill = PatternFill(patternType='solid', fgColor='33ffcc') #青緑
+    sheet.cell(row=4, column=2).fill = fill
+    fill = PatternFill(patternType='solid', fgColor='ffffdd') #薄黄
+    sheet.cell(row=5, column=2).fill = fill
+    fill = PatternFill(patternType='solid', fgColor='ddffff') #薄青緑
+    sheet.cell(row=6, column=2).fill = fill
+    fill = PatternFill(patternType='solid', fgColor='ffddff') #薄桃
+    sheet.cell(row=7, column=2).fill = fill
+    fill = PatternFill(patternType='solid', fgColor='00ee00') #緑
+    sheet.cell(row=8, column=2).fill = fill
+    fill = PatternFill(patternType='solid', fgColor='ffdbc9') #薄橙
+    sheet.cell(row=9, column=2).fill = fill
+    fill = PatternFill(patternType='solid', fgColor='ffd5ec') #薄赤
+    sheet.cell(row=10, column=2).fill = fill
+    fill = PatternFill(patternType='solid', fgColor='d9e5ff') #薄青
+    sheet.cell(row=11, column=2).fill = fill
 
     # 保存
     wb.save("sample.xlsx")
