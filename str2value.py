@@ -31,14 +31,14 @@ print(str16)
 '''
 
 str = 'ABCD'
-s1   = str[0:1] # 開始1文字目のみ
-s2   = str[1:2] # 開始2文字目のみ
-s02 = str[0:2] # 開始2文字分のみ
-s22 = str[2:4] # 開始2文目から4文字目まで
+s1   = str[0:1] # str[0]~str[1]の前までの範囲：開始1文字目のみ
+s2   = str[1:2] # str[1]~str[2]の前までの範囲：開始2文字目のみ
+s02 = str[0:2] # str[0]~str[2]の前までの範囲：開始2文字分のみ
+s24 = str[2:4] # str[2]~str[3]の前までの範囲：開始2文字目から2文字分のみ
 
 print('Cutout string')
 print(s1, end=',')
 print(s2, end=',')
 print(s02, end=',')
-print(s22)
+print(s24)
 
