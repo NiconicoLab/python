@@ -1,20 +1,23 @@
 import subprocess
 
-print('*** start call subprocess ***')
+if __name__ == '__main__':
 
-print('===============')
-print('call subprocess')
-print('===============')
+  print('*** start call subprocess ***')
 
-#fpath = 'search-str.py'
-fpath1 = '../arg.py'
-fpath2 = 'test1.txt'
-fpath3 = 'test2.txt'
+  print('===============')
+  print('call subprocess')
+  print('===============')
 
-cmd = 'python ' + fpath1 + " " + fpath2  + " " + fpath3 
+  #fpath = 'search-str.py'
+  fpath1 = '../arg.py'
+  fpath2 = 'test1.txt'
+  fpath3 = 'test2.txt'
 
-# 文字列で指定する場合shell=Trueを指定
-# 指定しない場合はバックトレースが出力される
-subprocess.call(cmd, shell=True)
+  cmd = 'python ' + fpath1 + " " + fpath2  + " " + fpath3 
+  print(cmd)
 
-print('*** finish call subprocess ***')
+  # 文字列で指定する場合shell=Trueを指定
+  # 指定しない場合はバックトレースが出力される
+  subprocess.call(cmd, shell=True)
+
+  print('*** finish call subprocess ***')
