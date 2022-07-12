@@ -10,9 +10,9 @@ def print_data(fname):
     data = f.read()
   cnt=0 
   for i, x in enumerate(data, 1):
-    print(f"{x:02X}",end=' ')
-    if i%20 == 0:
-      print()
+    print(f"{x:02X}",end='')
+    if i%16 != 0:
+      print(' ',end='')
     elif i%16 == 0:
       print(end='\n')
       cnt+=16
