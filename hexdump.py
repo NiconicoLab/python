@@ -18,7 +18,8 @@ def print_data(fname):
       cnt+=16
       str = '{:08X}'.format(cnt)
       print(str, '|', end=' ')
-      
+  print(end='\n')
+
 if __name__ == '__main__':
   args = sys.argv
   if len(args) == 2:
