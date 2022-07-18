@@ -1,4 +1,4 @@
-#バイナリを作成プログラム
+#バイナリを作成するプログラム
 
 def createBin():
   with open("create-binary.bin", "wb") as fout:
@@ -14,6 +14,10 @@ def createBin():
     bin.append(0x0E)
     bin.append(0x0F)
     bin.append(0x10)
+    fout.write(bin)
+
+    # 続けて違うリストを作成して書き込む場合は新たにbytearrayを定義する
+    bin = bytearray([0x11, 0x12, 0x13])
     fout.write(bin)
 
 if __name__ == "__main__":
